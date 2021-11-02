@@ -1,0 +1,139 @@
+// ====================BLOG.HTML============================
+.blog-page{
+    header{
+        background-image: url('../assets/blog-image-1.jpg');
+        background-position: 0 30px;
+    }
+
+    aside > *, 
+    article, 
+    .comment{
+        background: white;
+        padding: 30px;
+    }
+
+    aside div{
+        margin-bottom: 30px;
+        min-width: 220px;
+        max-width: 320px;
+    }
+
+    .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        a{
+            color: $dark-grey-blue;
+            text-decoration: none;
+        }
+    }
+
+    .about > *{
+        padding: 10px 0;
+    }
+
+    .main-aside-grid-container{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 25px;
+    }
+
+    ul{
+        list-style-position: inside;
+
+        li{
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 32px;
+            letter-spacing: 0px;
+        }
+
+        // give bullet custom spacing
+        span{
+            position: relative;
+            left: 15px;
+        }
+    }
+
+    article {
+        padding: 30px 40px;
+        border-bottom: 5px $orangey-yellow solid;
+    }
+
+    div.comments{
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+
+    .comment{
+        margin: 30px 0;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        grid-template-rows: 1fr;
+        gap: 30px;
+
+        img{
+            min-width: 65px;
+        }
+    }
+
+    .comment:nth-child(2){
+        margin-top: 30px;
+        border-bottom: 5px $orangey-yellow solid;
+    }
+    
+    p:not(footer p, .comment p, .about p){
+        margin-top: 15px;
+    }
+}
+
+
+
+@media(max-width:940px){
+    
+    .blog-page{
+        
+        header{
+            margin-bottom: 40px;
+        }
+        
+        h1{
+            margin: 0;
+            font-size: 70px;
+        }
+
+        .main-aside-grid-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        article{
+            margin-bottom: 40px;
+        }
+
+        aside{
+            margin: auto;
+            order: 1000;
+        }
+    }
+}
+
+
+
+
+@media(max-width:780px){
+    
+    .blog-page{
+
+        .wrapper{
+            max-width: 90%;
+        }
+
+        p,
+        .recent li{
+            font-size: 16px;
+        }
+    }
+}

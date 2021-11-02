@@ -1,0 +1,122 @@
+// ======================CONTACT.HTML==========================
+.contact-page{
+    header{
+        background-image: url('../assets/contact-image-1.jpg');
+    }
+
+    section{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 25px;
+    }
+
+    aside{
+        background-color: white;
+        padding: 25px;
+        color: $orangey-yellow;
+        min-width: 220px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .email-contact{
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+    }
+
+
+    .social-icons {
+        justify-content: flex-start;
+
+        li{
+            display: inline;
+            list-style-type: none;
+            margin: 0 20px 0 0;
+        }       
+    }   
+}
+
+
+
+@media(max-width:940px){
+    .contact-page{
+
+        header{
+            margin-bottom: 40px;
+        }
+
+        h1{
+            margin: 0;
+            font-size: 70px;
+        }
+
+        p{
+            font-size: 18px;
+        }
+    }
+}
+
+@media(max-width:780px){
+    
+    .contact-page{
+    
+        .wrapper{
+            max-width: 90%;
+        }
+
+        p{
+            font-size: 16px;
+        }
+    }
+}
+
+
+
+
+@media(max-width:650px){
+
+    .contact-page{
+
+        h1{
+            font-size: 60px;
+            text-align: center;
+        }
+
+        header{
+            margin-bottom: 40px;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            margin-bottom: 40px;
+            
+            aside{
+                align-items: center;
+                flex: 1;
+                max-width: none;
+                min-width: none;
+            
+                ul,
+                h4{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:512px){
+    .contact-page{
+        h1{
+            font-size: 50px;
+        }
+    }
+}
+
