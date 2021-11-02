@@ -52,7 +52,7 @@ nav {
     z-index: 1000;
 
     //NEEDED TO MAKE NAVBAR SLIDE UP/DOWN AS SCROLLING
-    // transition: top 0.2s linear;
+    transition: top 0.2s linear;
 
     .wrapper {
         min-width: 450px;

@@ -265,6 +265,8 @@ nav {
   position: fixed;
   top: 0px;
   z-index: 1000;
+  -webkit-transition: top 0.2s linear;
+  transition: top 0.2s linear;
 }
 nav .wrapper {
   min-width: 450px;
