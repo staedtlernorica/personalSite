@@ -7,6 +7,7 @@ window.onscroll = function () {
     document.getElementById("navbar").style.transition = '';
     document.getElementById("navbar").style.top = "0";
     document.getElementById("navbar").style.position = "static";
+    document.getElementsByTagName("body")[0].style.paddingTop = "0";
   } else if (prevScrollpos > currentScrollPos) {
     // document.getElementById("navbar").style.transition = 'top .2s linear';
     document.getElementById("navbar").style.top = "0";
