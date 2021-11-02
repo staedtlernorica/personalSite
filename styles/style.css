@@ -334,7 +334,7 @@ i {
 
 .skills .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
 .skills .wrapper h2:nth-child(even) {
   margin-top: 30px;
@@ -393,40 +393,48 @@ section.demo a:not(button a) {
   font-weight: bold;
 }
 
-.personal .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
-  grid-template-rows: 1fr;
-}
 .personal img {
   border: 6px solid #e76f51;
   border-radius: 5%;
-  grid-column: 1/2;
-  grid-row: 1/2;
+  max-width: 300px;
 }
 .personal p {
   margin: 0;
   margin-left: 10px;
   padding: 5px 10px 0 0;
-  max-width: 300px;
   font-weight: normal;
-  grid-column: 2/-1;
 }
 
-footer {
+footer .wrapper {
   color: #2a9d8f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-footer ul {
+footer ul,
+footer h3,
+footer p {
   padding: 0;
   margin: 0;
 }
 footer li {
   display: inline;
   list-style-type: none;
+  margin-right: 10px;
 }
 footer a {
-  margin-right: 15px;
   color: #2a9d8f;
+}
+footer p {
+  margin-top: 50px;
+  display: block;
+  text-align: center;
 }
 
 .buttons {
