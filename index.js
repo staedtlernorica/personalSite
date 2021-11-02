@@ -6,6 +6,7 @@ window.onscroll = function () {
   if ($(window).scrollTop() === 0) {
     document.getElementById("navbar").style.transition = '';
     document.getElementById("navbar").style.top = "0";
+    document.getElementById("navbar").style.position = "static";
   } else if (prevScrollpos > currentScrollPos) {
     // document.getElementById("navbar").style.transition = 'top .2s linear';
     document.getElementById("navbar").style.top = "0";
