@@ -7,6 +7,26 @@ $accent1: #e9c46a;
 $accent2: #f4a261;
 $accent3: #e76f51;
 
+// =============MEDIA QUERY MIXIN SETUPS================
+// 900PX
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+// 1200PX
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+// 1400PX
+@mixin for-big-desktop-up {
+    @media (min-width: 1400px) {
+        @content;
+    }
+}
+
 // =====================COMMON ELEMENTS================
 
 // ensures images are never larger than parent element
@@ -19,7 +39,20 @@ img {
     max-width: 90%;
     width: 100%;
     margin: 0 auto;
+
+    @include for-tablet-landscape-up{
+        max-width: 85%;
+    }
+
+    @include for-desktop-up(){
+        max-width: 75%;
+    }
+
+    @include for-big-desktop-up(){
+        max-width: 1000px;
+    }
 }
+
 
 p {
     line-height: 20px;
@@ -78,16 +111,14 @@ nav {
 
 section,
 footer {
-    background-color: $accent1;
+    background-color: $accent2;
     padding: 20px 0;
 }
 
-section:nth-child(even) {
-    background: $accent2;
+section:nth-child(even):not(.demos section) {
+    background: $accent1;
     color: $main;
 }
-
-
 
 h1 {
     letter-spacing: 1px;
@@ -175,26 +206,30 @@ a {
 }
 
 section.demo {
-    border: 2px solid $main;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 
     a:not(button a) {
         border-bottom: 2px solid $secondary;
         font-style: italic;
         font-weight: bold;
     }
+
+    .wrapper {
+        background-color: $accent1;
+        border: 2px solid $main;
+        border-radius: 12px;
+        padding: 0 15px 15px 15px;
+    }
 }
 
 .personal {
-
-
     img {
         border: 6px solid $accent3;
         border-radius: 5%;
         max-width: 300px;
     }
 
-    p{
+    p {
         margin: 0;
         margin-left: 10px;
         padding: 5px 10px 0 0;
@@ -203,13 +238,13 @@ section.demo {
 }
 
 footer {
-    .wrapper{
+    .wrapper {
         color: $secondary;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    ul, 
+    ul,
     h3,
     p {
         padding: 0;
@@ -224,7 +259,7 @@ footer {
         color: $secondary;
     }
 
-    p{
+    p {
         margin-top: 50px;
         display: block;
         text-align: center;

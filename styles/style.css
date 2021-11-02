@@ -239,6 +239,21 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media (min-width: 900px) {
+  .wrapper {
+    max-width: 85%;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 75%;
+  }
+}
+@media (min-width: 1400px) {
+  .wrapper {
+    max-width: 1000px;
+  }
+}
 
 p {
   line-height: 20px;
@@ -295,12 +310,12 @@ nav .on-page {
 
 section,
 footer {
-  background-color: #e9c46a;
+  background-color: #f4a261;
   padding: 20px 0;
 }
 
-section:nth-child(even) {
-  background: #f4a261;
+section:nth-child(even):not(.demos section) {
+  background: #e9c46a;
   color: #264653;
 }
 
@@ -384,13 +399,18 @@ a {
 }
 
 section.demo {
-  border: 2px solid #264653;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 section.demo a:not(button a) {
   border-bottom: 2px solid #2a9d8f;
   font-style: italic;
   font-weight: bold;
+}
+section.demo .wrapper {
+  background-color: #e9c46a;
+  border: 2px solid #264653;
+  border-radius: 12px;
+  padding: 0 15px 15px 15px;
 }
 
 .personal img {
