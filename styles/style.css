@@ -347,7 +347,8 @@ i {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.skills .wrapper {
+.skills .wrapper .relevant-skills,
+.skills .wrapper .auxilliary-skills {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
@@ -441,20 +442,38 @@ section.demo a:not(button a) {
   font-weight: bold;
 }
 
+.personal .wrapper {
+  padding: 0 25px;
+}
 .personal img {
   border: 6px solid #264653;
   border-radius: 50%;
   width: 40%;
   max-height: 250px;
+  min-width: 200px;
   max-width: 250px;
+  float: left;
+  margin: 0 40px 20px 40px;
+  -webkit-box-shadow: 2px 3px #e76f51;
+          box-shadow: 2px 3px #e76f51;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
 }
 @media (min-width: 900px) {
   .personal img {
     width: 60%;
   }
 }
+.personal img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 .personal p {
   margin: 0;
+  margin-bottom: 10px;
+  text-indent: 30px;
 }
 
 footer .wrapper {

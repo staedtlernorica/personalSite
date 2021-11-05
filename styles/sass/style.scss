@@ -40,19 +40,18 @@ img {
     width: 100%;
     margin: 0 auto;
 
-    @include for-tablet-landscape-up{
+    @include for-tablet-landscape-up {
         max-width: 85%;
     }
 
-    @include for-desktop-up(){
+    @include for-desktop-up() {
         max-width: 75%;
     }
 
-    @include for-big-desktop-up(){
+    @include for-big-desktop-up() {
         max-width: 1000px;
     }
 }
-
 
 p {
     line-height: 20px;
@@ -151,8 +150,20 @@ i {
 
 .skills {
     .wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+        .relevant-skills,
+        .auxilliary-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+
+        // .relevant-skills,
+        // .auxilliary-skills{
+        //     display: flex;
+        //     justify-content: space-between;
+        // }
 
         h2:nth-child(even) {
             margin-top: 30px;
@@ -205,21 +216,19 @@ a {
     text-decoration: none;
 }
 
-.demos{
-
-    .wrapper:nth-child(2){
+.demos {
+    .wrapper:nth-child(2) {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-    } 
+    }
 
-    section:nth-child(odd){
+    section:nth-child(odd) {
         align-self: flex-start;
     }
 }
 
 section.demo {
-    
     width: 100%;
     background-color: $accent1;
     border: 2px solid $main;
@@ -228,39 +237,55 @@ section.demo {
     margin-bottom: 15px;
     transition: width 0.3s ease-in;
 
-    @include for-desktop-up{
+    @include for-desktop-up {
         margin-bottom: 25px;
     }
 
-    @include for-big-desktop-up{
+    @include for-big-desktop-up {
         width: 80%;
     }
-    
+
     a:not(button a) {
         border-bottom: 2px solid $secondary;
         font-style: italic;
         font-weight: bold;
     }
-
 }
 
 .personal {
+
+    .wrapper{
+        padding: 0 25px;
+    }
+
     img {
         border: 6px solid $main;
         border-radius: 50%;
         width: 40%;
         max-height: 250px;
+        min-width: 200px;
         max-width: 250px;
+        float: left;
+        margin: 0 40px 20px 40px;
 
-        @include for-tablet-landscape-up{
+        box-shadow: 2px 3px $accent3;
+        transition: transform 0.1s linear;
+
+        @include for-tablet-landscape-up {
             width: 60%;
         }
     }
+    img:hover {
+        transform: scale(1.1);
+    }
 
     p {
+        // float: left;
         margin: 0;
         // margin-left: 10px;
         // padding: 5px 10px 0 0;
+        margin-bottom: 10px;
+        text-indent: 30px;
     }
 }
 
