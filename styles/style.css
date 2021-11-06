@@ -315,7 +315,7 @@ body {
   padding-top: 60px;
   color: #264653;
   min-width: 450px;
-  font-family: "Lora", serif;
+  font-family: "Lora", serif !important;
 }
 
 nav {
@@ -391,28 +391,9 @@ h1 {
   transition: transform 0.1s linear;
   transition: transform 0.1s linear, -webkit-transform 0.1s linear;
 }
-.skills h2:after {
-  position: absolute;
-  content: "";
-  height: 5px;
-  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
-  bottom: -5px;
-  margin: 0 auto;
-  left: 30px;
-  right: 0;
-  max-width: 270px;
-  background: #2a9d8f;
-}
-.skills h2:nth-of-type(even)::after {
-  background: #e76f51;
-  left: -30px;
-  max-width: 230px;
-}
-.skills h2:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
 .skills h4 {
+  font-size: 16px;
+  font-weight: bold;
   padding: 0;
   margin: 0;
   margin-top: 10px;
@@ -463,6 +444,9 @@ section.demo a:not(button a) {
   border-bottom: 2px solid #2a9d8f;
   font-style: italic;
   font-weight: bold;
+}
+section.demo h3 {
+  margin: 20px 0;
 }
 
 .personal .wrapper {
@@ -517,6 +501,9 @@ footer p {
   padding: 0;
   margin: 0;
 }
+footer h3 {
+  font-size: 20px;
+}
 footer li {
   display: inline;
   list-style-type: none;
@@ -526,7 +513,7 @@ footer a {
   color: #2a9d8f;
 }
 footer p {
-  margin-top: 50px;
+  margin-top: 30px;
   display: block;
   text-align: center;
 }
