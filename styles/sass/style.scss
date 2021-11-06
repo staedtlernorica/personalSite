@@ -1,11 +1,6 @@
 // @import "_defaults";
 @import "_snippets";
-
-$main: #264653;
-$secondary: #2a9d8f;
-$accent1: #e9c46a;
-$accent2: #f4a261;
-$accent3: #e76f51;
+@import "_commons";
 
 // =============MEDIA QUERY MIXIN SETUPS================
 // 900PX
@@ -58,6 +53,27 @@ p {
     letter-spacing: 1px;
 }
 
+section,
+footer {
+    background-color: $accent2;
+    padding: 20px 0;
+}
+
+section:nth-child(even):not(.demos section) {
+    background: $accent1;
+    color: $main;
+}
+
+.bold {
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+a {
+    color: $main;
+    text-decoration: none;
+}
+
 // min-width: 450px; TO LOOK GOOD ON 480PX SCREEN
 body {
     background: $accent1;
@@ -68,6 +84,7 @@ body {
 }
 
 // GOOD DOWN TO 480PX WIDE
+// NAV BAR ================================================
 nav {
     height: 60px;
     background-color: $main;
@@ -84,7 +101,7 @@ nav {
     z-index: 1000;
 
     //NEEDED TO MAKE NAVBAR SLIDE UP/DOWN AS SCROLLING
-    transition: top 0.2s linear;
+    transition: top 0.2s ease-in-out;
 
     .wrapper {
         min-width: 450px;
@@ -107,32 +124,16 @@ nav {
         color: $accent1;
     }
 }
-
-section,
-footer {
-    background-color: $accent2;
-    padding: 20px 0;
-}
-
-section:nth-child(even):not(.demos section) {
-    background: $accent1;
-    color: $main;
-}
-
+// NAV BAR ==============================================
+// ======================================================
+// INTRO SECTION ========================================
 h1 {
     letter-spacing: 1px;
     font-weight: normal;
 }
-
-.bold {
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-i {
-    font-size: 60px;
-}
-
+// INTRO SECTION ========================================
+// ======================================================
+// SKILLS SECTION =======================================
 .icon-container {
     transition: background-color 0.25s linear;
     text-align: center;
@@ -152,41 +153,21 @@ i {
     .wrapper {
         // display: grid;
         // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
 
-        .relevant-skills,
-        .auxilliary-skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        }
-
-        // .relevant-skills,
-        // .auxilliary-skills{
+    .relevant-skills,
+    .auxilliary-skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         //     display: flex;
         //     justify-content: space-between;
-        // }
-
-        h2:nth-child(even) {
-            margin-top: 30px;
-            font-style: italic;
-        }
-
-        h2:nth-child(even):after {
-            left: -30px;
-            right: 0;
-            max-width: 230px;
-            background: $accent1;
-        }
     }
 
     h2 {
         grid-column: 1/-1;
         text-align: center;
         position: relative;
-        transition: transform 0.2s linear;
-    }
-
-    h2:hover {
-        transform: scale(1.1);
+        transition: transform 0.1s linear;
     }
 
     h2:after {
@@ -195,12 +176,21 @@ i {
         height: 5px;
         /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
         bottom: -5px;
-
         margin: 0 auto;
         left: 30px;
         right: 0;
         max-width: 270px;
         background: $secondary;
+    }
+
+    h2:nth-of-type(even)::after {
+        background: $accent3;
+        left: -30px;
+        max-width: 230px;
+    }
+
+    h2:hover {
+        transform: scale(1.05);
     }
 
     h4 {
@@ -209,13 +199,14 @@ i {
         margin-top: 10px;
         color: $secondary;
     }
-}
 
-a {
-    color: $main;
-    text-decoration: none;
+    i {
+        font-size: 60px;
+    }
 }
-
+// SKILLS SECTION ==========================================
+// =========================================================
+// DEMO SECTION ============================================
 .demos {
     .wrapper:nth-child(2) {
         display: flex;
@@ -251,10 +242,11 @@ section.demo {
         font-weight: bold;
     }
 }
-
+// DEMO SECTION ============================================
+// =========================================================
+// PERSONAL SECTION ========================================
 .personal {
-
-    .wrapper{
+    .wrapper {
         padding: 0 25px;
     }
 
@@ -289,6 +281,9 @@ section.demo {
     }
 }
 
+// PERSONAL SECTION ==========================================
+// ===========================================================
+// FOOTER SECTION ============================================
 footer {
     .wrapper {
         color: $secondary;
@@ -328,31 +323,5 @@ footer {
     }
 }
 
-button {
-    background-color: $secondary;
-    padding: 0 10px;
-    border: $main solid 2px;
-    border-radius: 12px;
-    font-family: "Roboto", sans-serif;
-    line-height: 32px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: background-color 0.2s linear;
-}
-
-.grey-out {
-    // background-color: grey;
-    background-image: linear-gradient(168deg, grey 50%, darkgrey 50%);
-    a {
-        cursor: default;
-        pointer-events: none;
-    }
-}
-
-button:not(.grey-out):hover {
-    background-color: $main;
-    border-color: $secondary;
-    a {
-        color: $secondary;
-    }
-}
+// END ==================================================
+// ======================================================
