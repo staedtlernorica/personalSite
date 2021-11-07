@@ -28,7 +28,8 @@ button {
     }
 }
 
-button:not(.grey-out):hover {
+// can't just apply .grey-out to indicator buttons because active indicator button needs to be active/unfaded color than unactive indicators
+button:not(.grey-out):not(.carousel-indicators button):hover {
     background-color: $main;
     border-color: $secondary;
     a {

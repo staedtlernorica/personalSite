@@ -48,7 +48,7 @@ img {
     }
 }
 
-p{
+p {
     line-height: 20px;
     letter-spacing: 1px;
 }
@@ -80,7 +80,7 @@ body {
     padding-top: 60px;
     color: $main;
     min-width: 450px;
-    font-family: "Lora", serif !important; 
+    font-family: "Lora", serif !important;
 }
 
 // GOOD DOWN TO 480PX WIDE
@@ -107,8 +107,13 @@ nav {
         min-width: 450px;
         height: 100%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
+        transition: justify-content 1s linear;
+
+        @include for-tablet-landscape-up {
+            justify-content: space-evenly;
+        }
     }
 
     a {
@@ -122,6 +127,34 @@ nav {
 
     .on-page {
         color: $accent1;
+    }
+
+    .dropdown-toggle {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .dropdown-toggle {
+            display: block;
+            color: $main;
+            // border: 2px solid $accent2;
+            border: 0;
+            background: $accent2;
+        }
+
+        .dropdown-toggle:hover{
+            color: $secondary;
+            // border: 2px solid $accent3 !important;
+            background: $accent1 !important;
+        }
+
+        a {
+            display: none;
+        }
+
+        .wrapper {
+            justify-content: flex-end;
+        }
     }
 }
 // NAV BAR ==============================================
@@ -245,10 +278,31 @@ section.demo {
         font-weight: bold;
     }
 
-    h3{
+    h3 {
         margin: 20px 0;
     }
 }
+
+.carousel.slide {
+    button {
+        border-radius: 0;
+    }
+
+    button:not(.carousel-indicators button) {
+        // height: 50%;
+    }
+
+    button:not(.carousel-indicators button) {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    // change carousel image size by changing class="d-block-75" inline style
+    img {
+        margin: auto;
+        // max-height: 100px;
+    }
+}
+
 // DEMO SECTION ============================================
 // =========================================================
 // PERSONAL SECTION ========================================
@@ -305,7 +359,7 @@ footer {
         margin: 0;
     }
 
-    h3{
+    h3 {
         font-size: 20px;
     }
 
